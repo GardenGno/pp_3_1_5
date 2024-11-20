@@ -25,9 +25,7 @@ public class Communication {
                         , new ParameterizedTypeReference<String>() {
                         });
         String cookie = response.getHeaders().get("Set-Cookie").stream().collect(Collectors.joining());
-        System.out.println(cookie); //наш ключ
         HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Cookie", cookie);
         return headers;
     }

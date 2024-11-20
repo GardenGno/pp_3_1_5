@@ -10,9 +10,6 @@ public class App {
         Communication comm = context.getBean("communication", Communication.class);
 
         HttpHeaders headers = comm.getHeaders();
-        comm.saveUser(headers);
-        comm.updateUser(headers, comm.getUserByID(headers, 3L));
-        comm.deleteUser(headers, comm.getUserByID(headers, 3L));
         System.out.println(comm.saveUser(headers) + comm.updateUser(headers, comm.getUserByID(headers, 3L))
                 + comm.deleteUser(headers, comm.getUserByID(headers, 3L)));
 
